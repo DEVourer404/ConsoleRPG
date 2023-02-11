@@ -7,11 +7,19 @@ public:
 	Character();
 	
 	void characterCreation();
+	void showCharacter();
+	void characterMenu();
+	void travel();
+
 
 	std::string getName() { return this->name; };
+	std::string getCharacterClass() { return this->characterClass; };
+
 
 	int getHp() { return this->hp; };
 	int getMaxHp() { return this->maxHp; };
+
+	//std::string getCurrentLocation() { return Game::map[xPos][yPos]; };
 
 	int getStamina() { return this->stamina; };
 	int getMaxStamina() { return this->maxStamina; };
@@ -23,6 +31,7 @@ public:
 	int getDexterity() { return this->dexterity; };
 	int getIntelligence() { return this->intelligence; };
 
+	//void setCurrentLocation(std::string location) { this->currentLocation = currentLocation; };
 
 	void setMaxHp(int hp) { this->maxHp += hp; this->hp = this->maxHp;};
 	void setMaxStamina(int stamina) { this->maxStamina += stamina; this->stamina = this->maxStamina;};
@@ -33,11 +42,16 @@ public:
 	void setDexterity(int dexterity) { this->dexterity += dexterity; };
 	void setIntelligence(int intelligence) { this->intelligence += intelligence;};
 
+	int xPos, yPos;
 
 private:
 	std::string name;
 	std::string characterClass;
+	
 
+	int level;
+	int exp;
+	int maxExp;
 
 	int hp;
 	int maxHp;
